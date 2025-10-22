@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anjung Prime | Rumah Sewa Mewah</title>
+  <meta name="description" content="Anjung Prime - Rumah sewa mewah dan selesa di Senawang. Tempah rumah sekarang!">
+  <meta name="keywords" content="anjung prime, rumah sewa senawang, sewa rumah taman jasmin, rumah sewa murah">
+  <meta name="author" content="Anjung Prime Property">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #d4af37, #1c1c1c);
+      color: #fff;
+      text-align: center;
+    }
+    header {
+      padding: 20px;
+      font-size: 24px;
+      font-weight: 600;
+      background-color: rgba(0,0,0,0.4);
+      backdrop-filter: blur(8px);
+      letter-spacing: 1px;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+    .card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card h2 {
+      margin: 10px 0 0 0;
+      font-size: 20px;
+    }
+    .card p {
+      font-size: 16px;
+      color: #ddd;
+      margin: 5px 0 15px;
+    }
+    button {
+      background: #d4af37;
+      color: black;
+      font-weight: bold;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-bottom: 15px;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #fff;
+    }
+    form {
+      background: rgba(255,255,255,0.15);
+      padding: 25px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 450px;
+      margin: 40px auto;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+    input, select {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+    }
+    footer {
+      padding: 15px;
+      font-size: 14px;
+      background: rgba(0,0,0,0.3);
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>🏠 Anjung Prime | Sewa Rumah Mewah & Selesa</header>
+
+  <div class="container">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Rumah Taman Jasmin">
+      <h2>Taman Jasmin Senawang</h2>
+      <p>RM850 / Bulan · 3 Bilik Tidur · 2 Bilik Air</p>
+      <button onclick="selectHouse('Taman Jasmin Senawang')">Pilih Rumah</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1572120360610-d971b9b78825" alt="Rumah Desa Dahlia">
+      <h2>Taman Desa Dahlia</h2>
+      <p>RM900 / Bulan · 4 Bilik Tidur · 2 Bilik Air</p>
+      <button onclick="selectHouse('Taman Desa Dahlia')">Pilih Rumah</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994" alt="Rumah Lavender Heights">
+      <h2>Taman Lavender Heights</h2>
+      <p>RM1,200 / Bulan · 4 Bilik Tidur · 3 Bilik Air</p>
+      <button onclick="selectHouse('Taman Lavender Heights')">Pilih Rumah</button>
+    </div>
+  </div>
+
+  <form id="bookingForm">
+    <h2>📝 Borang Tempahan Rumah</h2>
+    <input type="text" id="nama" placeholder="Nama Penuh" required><br>
+    <input type="tel" id="telefon" placeholder="Nombor Telefon" required><br>
+    <select id="rumah">
+      <option value="">Pilih Rumah</option>
+      <option value="Taman Jasmin Senawang">Taman Jasmin Senawang</option>
+      <option value="Taman Desa Dahlia">Taman Desa Dahlia</option>
+      <option value="Taman Lavender Heights">Taman Lavender Heights</option>
+    </select><br>
+    <input type="number" id="umur" placeholder="Umur" required><br>
+    <input type="text" id="pekerjaan" placeholder="Pekerjaan" required><br>
+    <input type="date" id="tarikh" required><br>
+    <button type="button" onclick="hantarWhatsApp()">📲 Hantar ke WhatsApp</button>
+  </form>
+
+  <footer>© 2025 Anjung Prime Property Management</footer>
+
+  <script>
+    let rumahDipilih = "";
+
+    function selectHouse(namaRumah) {
+      document.getElementById("rumah").value = namaRumah;
+      rumahDipilih = namaRumah;
+      window.scrollTo({ top: document.getElementById("bookingForm").offsetTop, behavior: "smooth" });
+    }
+
+    function hantarWhatsApp() {
+      const nama = document.getElementById("nama").value;
+      const telefon = document.getElementById("telefon").value;
+      const rumah = document.getElementById("rumah").value;
+      const umur = document.getElementById("umur").value;
+      const pekerjaan = document.getElementById("pekerjaan").value;
+      const tarikh = document.getElementById("tarikh").value;
+
+      if (!nama || !telefon || !rumah || !umur || !pekerjaan || !tarikh) {
+        alert("Sila isi semua maklumat.");
+        return;
+      }
+
+      const msg = `Hai, saya ${nama}.\nSaya berminat dengan rumah ${rumah}.\n\n📱 Telefon: ${telefon}\n🎂 Umur: ${umur}\n💼 Pekerjaan: ${pekerjaan}\n📅 Tarikh sewa: ${tarikh}`;
+      const noAdmin = "60123456789"; // ← GANTI dengan nombor WhatsApp admin
+
+      const url = `https://wa.me/${noAdmin}?text=${encodeURIComponent(msg)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+
+</body>
+</html>
