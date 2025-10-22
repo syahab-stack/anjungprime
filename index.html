@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anjung Prime | Rumah Sewa Mewah</title>
+  <meta name="description" content="Anjung Prime - Rumah sewa mewah dan selesa di Senawang. Tempah rumah sekarang!">
+  <meta name="keywords" content="anjung prime, rumah sewa senawang, sewa rumah taman jasmin, rumah sewa murah">
+  <meta name="author" content="Anjung Prime Property">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #d4af37, #1c1c1c);
+      color: #fff;
+      text-align: center;
+    }
+    header {
+      padding: 20px;
+      font-size: 24px;
+      font-weight: 600;
+      background-color: rgba(0,0,0,0.4);
+      backdrop-filter: blur(8px);
+      letter-spacing: 1px;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+    .card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card h2 {
+      margin: 10px 0 0 0;
+      font-size: 20px;
+    }
+    .card p {
+      font-size: 16px;
+      color: #ddd;
+      margin: 5px 0 15px;
+    }
+    button {
+      background: #d4af37;
+      color: black;
+      font-weight: bold;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-bottom: 15px;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #fff;
+    }
+    footer {
+      padding: 15px;
+      font-size: 14px;
+      background: rgba(0,0,0,0.3);
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>🏠 Anjung Prime | Sewa Rumah Mewah & Selesa</header>
+
+  <div class="container">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Rumah Taman Jasmin">
+      <h2>Taman Jasmin Senawang</h2>
+      <p>RM850 / Bulan · 3 Bilik Tidur · 2 Bilik Air</p>
+      <button onclick="choose('Taman Jasmin Senawang')">Pilih Rumah</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1572120360610-d971b9b78825" alt="Rumah Desa Dahlia">
+      <h2>Taman Desa Dahlia</h2>
+      <p>RM900 / Bulan · 4 Bilik Tidur · 2 Bilik Air</p>
+      <button onclick="choose('Taman Desa Dahlia')">Pilih Rumah</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994" alt="Rumah Taman Lavender">
+      <h2>Taman Lavender Heights</h2>
+      <p>RM1,200 / Bulan · 4 Bilik Tidur · 3 Bilik Air</p>
+      <button onclick="choose('Taman Lavender Heights')">Pilih Rumah</button>
+    </div>
+  </div>
+
+  <footer>© 2025 Anjung Prime Property Management</footer>
+
+  <script>
+    function choose(house) {
+      alert("Anda memilih " + house + ". Admin akan hubungi anda sekejap lagi.");
+      // Boleh tambah link WhatsApp admin:
+      // window.location.href = "https://wa.me/60123456789?text=Hai%20saya%20berminat%20dengan%20" + house;
+    }
+  </script>
+
+</body>
+</html>
